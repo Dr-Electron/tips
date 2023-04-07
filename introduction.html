@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Introduction - The Tangle Improvement Proposal (TIP) Book</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html" class="active">Introduction</a></li><li class="chapter-item expanded "><a href="tips/TIP-0001/tip-0001.html">TIP-1 TIP Process</a></li><li class="chapter-item expanded "><a href="tips/TIP-0002/tip-0002.html">TIP-2 White Flag Ordering</a></li><li class="chapter-item expanded "><a href="tips/TIP-0003/tip-0003.html">TIP-3 Uniform Random Tip Selection</a></li><li class="chapter-item expanded "><a href="tips/TIP-0004/tip-0004.html">TIP-4 Milestone Merkle Validation</a></li><li class="chapter-item expanded "><a href="tips/TIP-0005/tip-0005.html">TIP-5 Binary To Ternary Encoding</a></li><li class="chapter-item expanded "><a href="tips/TIP-0006/tip-0006.html">TIP-6 Tangle Message</a></li><li class="chapter-item expanded "><a href="tips/TIP-0007/tip-0007.html">TIP-7 Transaction Payload</a></li><li class="chapter-item expanded "><a href="tips/TIP-0008/tip-0008.html">TIP-8 Milestone Payload</a></li><li class="chapter-item expanded "><a href="tips/TIP-0009/tip-0009.html">TIP-9 Local Snapshot File Format</a></li><li class="chapter-item expanded "><a href="tips/TIP-0010/tip-0010.html">TIP-10 Mnemonic Ternary Seed</a></li><li class="chapter-item expanded "><a href="tips/TIP-0011/tip-0011.html">TIP-11 Bech32 Address Format</a></li><li class="chapter-item expanded "><a href="tips/TIP-0012/tip-0012.html">TIP-12 Message PoW</a></li><li class="chapter-item expanded "><a href="tips/TIP-0013/tip-0013.html">TIP-13 REST API</a></li><li class="chapter-item expanded "><a href="tips/TIP-0014/tip-0014.html">TIP-14 Ed25519 Validation</a></li><li class="chapter-item expanded "><a href="tips/TIP-0015/tip-0015.html">TIP-15 Dust Protection</a></li><li class="chapter-item expanded "><a href="tips/TIP-0016/tip-0016.html">TIP-16 Event API</a></li><li class="chapter-item expanded "><a href="tips/TIP-0017/tip-0017.html">TIP-17 Wotsicide</a></li><li class="chapter-item expanded "><a href="tips/TIP-0018/tip-0018.html">TIP-18 Multi-Asset Ledger and ISC Support</a></li><li class="chapter-item expanded "><a href="tips/TIP-0019/tip-0019.html">TIP-19 Dust Protection Based on Byte Costs (Storage Deposit)</a></li><li class="chapter-item expanded "><a href="tips/TIP-0020/tip-0020.html">TIP-20 Transaction Payload with TIP-18 Output Types</a></li><li class="chapter-item expanded "><a href="tips/TIP-0021/tip-0021.html">TIP-21 Serialization Primitives</a></li><li class="chapter-item expanded "><a href="tips/TIP-0022/tip-0022.html">TIP-22 IOTA Protocol Parameters</a></li><li class="chapter-item expanded "><a href="tips/TIP-0023/tip-0023.html">TIP-23 Tagged Data Payload</a></li><li class="chapter-item expanded "><a href="tips/TIP-0024/tip-0024.html">TIP-24 Tangle Block</a></li><li class="chapter-item expanded "><a href="tips/TIP-0025/tip-0025.html">TIP-25 Core REST API</a></li><li class="chapter-item expanded "><a href="tips/TIP-0026/tip-0026.html">TIP-26 UTXO Indexer API</a></li><li class="chapter-item expanded "><a href="tips/TIP-0027/tip-0027.html">TIP-27 IOTA NFT Standard IRC27</a></li><li class="chapter-item expanded "><a href="tips/TIP-0028/tip-0028.html">TIP-28 Event API</a></li><li class="chapter-item expanded "><a href="tips/TIP-0029/tip-0029.html">TIP-29 Milestone Payload</a></li><li class="chapter-item expanded "><a href="tips/TIP-0030/tip-0030.html">TIP-30 Native Token Metadata JSON Schema</a></li><li class="chapter-item expanded "><a href="tips/TIP-0031/tip-0031.html">TIP-31 Bech32 Address Format</a></li><li class="chapter-item expanded "><a href="tips/TIP-0032/tip-0032.html">TIP-32 Shimmer Protocol Parameters</a></li><li class="chapter-item expanded "><a href="tips/TIP-0034/tip-0034.html">TIP-34 Wotsicide (Stardust)</a></li><li class="chapter-item expanded "><a href="tips/TIP-0035/tip-0035.html">TIP-35 Local Snapshot File Format</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Tangle Improvement Proposal (TIP) Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="tangle-improvement-proposal-tip-repository"><a class="header" href="#tangle-improvement-proposal-tip-repository">Tangle Improvement Proposal (TIP) Repository</a></h1>
+<p>TIPs are improvement proposals for bettering the IOTA technology stack.</p>
+<p>Building the IOTA ecosystem is a community effort, therefore we welcome anyone to propose, discuss and debate ideas that will later become formalized TIPs.</p>
+<h2 id="propose-new-ideas"><a class="header" href="#propose-new-ideas">Propose new ideas</a></h2>
+<p>Do you have an idea how to improve the IOTA technology stack?</p>
+<ul>
+<li>Head over to the <a href="https://github.com/iotaledger/tips/discussions">discussions</a> page to browse already submitted ideas or share yours!</li>
+<li>Once your idea is discussed, you can submit a draft TIP (<a href="https://github.com/iotaledger/tips/blob/main/tip-template.md">template here</a> as a PR to the repository.</li>
+<li>You will receive feedback from the TIP Editors and review from core devs.</li>
+<li>Once accepted, your TIP is merged as Draft.</li>
+<li>It is your responsibility to drive its implementation and to present a clear plan on how the new feature will be adopted by the network.</li>
+<li>Once implementation is ready and testing yields satisfactory result, the TIP becomes Proposed.</li>
+<li>Proposed TIPs that are supported by majority of the network become Active.</li>
+</ul>
+<p>You may find more information about the TIP Process in <a href="./tips/TIP-0001/tip-0001.html">TIP-1</a>.</p>
+<h2 id="stardust-tips"><a class="header" href="#stardust-tips">Stardust TIPs</a></h2>
+<p>Stardust is the next upgrade of the IOTA protocol that adds tokenization and smart contract chain support besides many
+more improvements. Browse the <a href="#list-of-tips">list of TIPs</a> below with the <em>Stardust</em> tag to learn more about what changes.</p>
+<h2 id="list-of-tips"><a class="header" href="#list-of-tips">List of TIPs</a></h2>
+<ul>
+<li>Last updated: 2022-05-20</li>
+<li>The <em>Status</em> of a TIP reflects its current state with respect to its progression to being supported on the IOTA mainnet.
+<ul>
+<li><code>Draft</code> TIPs are work in progress. They may or may not have a working implementation on a testnet.</li>
+<li><code>Proposed</code> TIPs are demonstrated to have a working implementation. These TIPs are supported on Shimmer, the staging network of IOTA.</li>
+<li><code>Active</code> TIPs are supported on the IOTA mainnet.</li>
+</ul>
+</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>#</th><th>Title</th><th>Description</th><th>Type</th><th>Layer</th><th>Status</th><th>Initial Target</th></tr></thead><tbody>
+<tr><td>1</td><td><a href="tips/TIP-0001/tip-0001.html">TIP Process</a></td><td>Purpose and guidelines of the contribution framework</td><td>Process</td><td>-</td><td>Active</td><td>-</td></tr>
+<tr><td>2</td><td><a href="tips/TIP-0002/tip-0002.html">White Flag Ordering</a></td><td>Mitigate conflict spamming by ignoring conflicts</td><td>Standards</td><td>Core</td><td>Active</td><td>Chrysalis</td></tr>
+<tr><td>3</td><td><a href="tips/TIP-0003/tip-0003.html">Uniform Random Tip Selection</a></td><td>Perform fast tip-selection to increase message throughput</td><td>Standards</td><td>Core</td><td>Active</td><td>Chrysalis</td></tr>
+<tr><td>4</td><td><a href="tips/TIP-0004/tip-0004.html">Milestone Merkle Validation</a></td><td>Add Merkle tree hash to milestone for local ledger state verification</td><td>Standards</td><td>Core</td><td>Active</td><td>Chrysalis</td></tr>
+<tr><td>5</td><td><a href="tips/TIP-0005/tip-0005.html">Binary To Ternary Encoding</a></td><td>Define the conversion between binary and ternary data</td><td>Standards</td><td>Core</td><td>Active</td><td>Chrysalis</td></tr>
+<tr><td>6</td><td><a href="tips/TIP-0006/tip-0006.html">Tangle Message</a></td><td>Generalization of the Tangle transaction concept</td><td>Standards</td><td>Core</td><td>Active</td><td>Chrysalis</td></tr>
+<tr><td>7</td><td><a href="tips/TIP-0007/tip-0007.html">Transaction Payload</a></td><td>UTXO-based transaction structure</td><td>Standards</td><td>Core</td><td>Active</td><td>Chrysalis</td></tr>
+<tr><td>8</td><td><a href="tips/TIP-0008/tip-0008.html">Milestone Payload</a></td><td>Coordinator issued milestone structure with Ed25519 authentication</td><td>Standards</td><td>Core</td><td>Active</td><td>Chrysalis</td></tr>
+<tr><td>9</td><td><a href="tips/TIP-0009/tip-0009.html">Local Snapshot File Format</a></td><td>File format to export/import ledger state</td><td>Standards</td><td>Interface</td><td>Active</td><td>Chrysalis</td></tr>
+<tr><td>10</td><td><a href="tips/TIP-0010/tip-0010.html">Mnemonic Ternary Seed</a></td><td>Represent ternary seed as a mnemonic sentence</td><td>Standards</td><td>IRC</td><td>Obsolete</td><td>Legacy IOTA</td></tr>
+<tr><td>11</td><td><a href="tips/TIP-0011/tip-0011.html">Bech32 Address Format</a></td><td>Extendable address format supporting various signature schemes and address types</td><td>Standards</td><td>Interface</td><td>Active</td><td>Chrysalis</td></tr>
+<tr><td>12</td><td><a href="tips/TIP-0012/tip-0012.html">Message PoW</a></td><td>Define message proof-of-work as a means to rate-limit the network</td><td>Standards</td><td>Core</td><td>Active</td><td>Chrysalis</td></tr>
+<tr><td>13</td><td><a href="tips/TIP-0013/tip-0013.html">REST API</a></td><td>Node REST API routes and objects in OpenAPI Specification</td><td>Standards</td><td>Interface</td><td>Active</td><td>Chrysalis</td></tr>
+<tr><td>14</td><td><a href="tips/TIP-0014/tip-0014.html">Ed25519 Validation</a></td><td>Adopt <a href="https://zips.z.cash/zip-0215">ZIP-215</a> to explicitly define Ed25519 validation criteria</td><td>Standards</td><td>Core</td><td>Active</td><td>Chrysalis</td></tr>
+<tr><td>15</td><td><a href="tips/TIP-0015/tip-0015.html">Dust Protection</a></td><td>Prevent bloating the ledger size with to dust outputs</td><td>Standards</td><td>Core</td><td>Active</td><td>Chrysalis</td></tr>
+<tr><td>16</td><td><a href="tips/TIP-0016/tip-0016.html">Event API</a></td><td>Node event API definitions in AsyncAPI Specification</td><td>Standards</td><td>Interface</td><td>Active</td><td>Chrysalis</td></tr>
+<tr><td>17</td><td><a href="tips/TIP-0017/tip-0017.html">Wotsicide</a></td><td>Define migration from legacy WOTS addresses to post-Chrysalis Phase 2 network</td><td>Standards</td><td>Core</td><td>Active</td><td>Chrysalis</td></tr>
+<tr><td>18</td><td><a href="tips/TIP-0018/tip-0018.html">Multi-Asset Ledger and ISC Support</a></td><td>Transform IOTA into a multi-asset ledger that supports running IOTA Smart Contracts</td><td>Standards</td><td>Core</td><td>Proposed</td><td><strong>Stardust</strong></td></tr>
+<tr><td>19</td><td><a href="tips/TIP-0019/tip-0019.html">Dust Protection Based on Byte Costs</a></td><td>Prevent bloating the ledger size with dust outputs</td><td>Standards</td><td>Core</td><td>Proposed</td><td><strong>Stardust</strong></td></tr>
+<tr><td>20</td><td><a href="tips/TIP-0020/tip-0020.html">Transaction Payload with New Output Types</a></td><td>UTXO-based transaction structure with TIP-18</td><td>Standards</td><td>Core</td><td>Proposed</td><td><strong>Stardust</strong></td></tr>
+<tr><td>21</td><td><a href="tips/TIP-0021/tip-0021.html">Serialization Primitives</a></td><td>Introduce primitives to describe the binary serialization of objects</td><td>Standards</td><td>Core</td><td>Proposed</td><td><strong>Stardust</strong></td></tr>
+<tr><td>22</td><td><a href="tips/TIP-0022/tip-0022.html">IOTA Protocol Parameters</a></td><td>Describes the global protocol parameters for the IOTA protocol</td><td>Standards</td><td>Core</td><td>Draft</td><td><strong>Stardust</strong></td></tr>
+<tr><td>23</td><td><a href="tips/TIP-0023/tip-0023.html">Tagged Data Payload</a></td><td>Payload for arbitrary data</td><td>Standards</td><td>Core</td><td>Proposed</td><td><strong>Stardust</strong></td></tr>
+<tr><td>24</td><td><a href="tips/TIP-0024/tip-0024.html">Tangle Block</a></td><td>A new version of TIP-6 that renames messages to blocks and removes the Indexation Payload in favor of the Tagged Data Payload. Replaces TIP-6.</td><td>Standards</td><td>Core</td><td>Proposed</td><td><strong>Stardust</strong></td></tr>
+<tr><td>25</td><td><a href="tips/TIP-0025/tip-0025.html">Core REST API</a></td><td>Node Core REST API routes and objects in OpenAPI Specification. Replaces TIP-13.</td><td>Standards</td><td>Interface</td><td>Proposed</td><td><strong>Stardust</strong></td></tr>
+<tr><td>26</td><td><a href="tips/TIP-0026/tip-0026.html">UTXO Indexer REST API</a></td><td>UTXO Indexer REST API routes and objects in OpenAPI Specification.</td><td>Standards</td><td>Interface</td><td>Proposed</td><td><strong>Stardust</strong></td></tr>
+<tr><td>27</td><td><a href="tips/TIP-0027/tip-0027.html">IOTA NFT standards</a></td><td>Define NFT metadata standard, collection system and creator royalties</td><td>Standards</td><td>IRC</td><td>Proposed</td><td><strong>Stardust</strong></td></tr>
+<tr><td>28</td><td><a href="tips/TIP-0028/tip-0028.html">Node Event API</a></td><td>Node event API definitions in AsyncAPI Specification. Replaces TIP-16.</td><td>Standards</td><td>Interface</td><td>Proposed</td><td><strong>Stardust</strong></td></tr>
+<tr><td>29</td><td><a href="tips/TIP-0029/tip-0029.html">Milestone Payload</a></td><td>Milestone Payload with keys removed from essence. Replaces TIP-8.</td><td>Standards</td><td>Core</td><td>Proposed</td><td><strong>Stardust</strong></td></tr>
+<tr><td>30</td><td><a href="tips/TIP-0030/tip-0030.html">Native Token Metadata Standard</a></td><td>A JSON schema that describes token metadata format for native token foundries</td><td>Standards</td><td>IRC</td><td>Proposed</td><td><strong>Stardust</strong></td></tr>
+<tr><td>31</td><td><a href="tips/TIP-0031/tip-0031.html">Bech32 Address Format for IOTA and Shimmer</a></td><td>Extendable address format supporting various signature schemes and address types. Replaces TIP-11.</td><td>Standards</td><td>Interface</td><td>Proposed</td><td><strong>Stardust</strong></td></tr>
+<tr><td>32</td><td><a href="tips/TIP-0032/tip-0032.html">Shimmer Protocol Parameters</a></td><td>Describes the global protocol parameters for the Shimmer network</td><td>Standards</td><td>Core</td><td>Proposed</td><td><strong>Stardust</strong></td></tr>
+<tr><td>33</td><td><a href="https://github.com/iotaledger/tips/pull/72">Public Token Registry</a></td><td>Defines an open public registry for NFT collection ID and native tokens metadata</td><td>Standards</td><td>IRC</td><td>Draft</td><td><strong>Stardust</strong></td></tr>
+<tr><td>34</td><td><a href="tips/TIP-0034/tip-0034.html">Wotsicide (Stardust update)</a></td><td>Define migration from legacy W-OTS addresses to post-Chrysalis networks. Replaces TIP-17.</td><td>Standards</td><td>Core</td><td>Proposed</td><td><strong>Stardust</strong></td></tr>
+<tr><td>35</td><td><a href="tips/TIP-0035/tip-0035.html">Local Snapshot File Format (Stardust Update)</a></td><td>File format to export/import ledger state. Replaces TIP-9.</td><td>Standards</td><td>Interface</td><td>Proposed</td><td><strong>Stardust</strong></td></tr>
+<tr><td>37</td><td><a href="https://github.com/iotaledger/tips/pull/81">Dynamic Proof-of-Work</a></td><td>Dynamically adapt the PoW difficulty</td><td>Standards</td><td>Core</td><td>Draft</td><td><strong>Stardust</strong></td></tr>
+</tbody></table>
+</div>
+<h2 id="need-help"><a class="header" href="#need-help">Need help?</a></h2>
+<p>If you want to get involved in the community, need help getting started, have any issues related to the repository or just want to discuss blockchain, distributed ledgers, and IoT with other people, feel free to join our <a href="https://discord.iota.org/">Discord</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next" href="tips/TIP-0001/tip-0001.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next" href="tips/TIP-0001/tip-0001.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
